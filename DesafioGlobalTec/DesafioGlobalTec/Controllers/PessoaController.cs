@@ -16,16 +16,7 @@ namespace DesafioGlobalTec.Controllers
     [ApiController]
     public class PessoaController : Controller
     {
-        
-        
-        public PessoaController()
-        {
-
-            
-        }
-
-
-        // GET: api/Pessoa
+        // GET: api/Pessoa/GetPessoas
         [HttpGet]
         [ActionName("GetPessoas")]
         public List<Pessoa> GetPessoas()
@@ -40,7 +31,7 @@ namespace DesafioGlobalTec.Controllers
             return null;
         }
 
-        // GET: api/Morador/5
+        // GET: api/Pessoa/GetPessoa/5
         [HttpGet("{id}", Name = "GetPessoa")]
         [ActionName("GetPessoa")]
         public Pessoa GetPessoa(int id)
@@ -57,15 +48,14 @@ namespace DesafioGlobalTec.Controllers
         }
 
 
-        // GET: api/Morador/5
-       
+       // GET: api/Pessoa/GetUf/GO     
         [HttpGet("{uf}", Name = "GetUf")]
         [ActionName("GetUf")]
-        public Pessoa Get(string Uf)
+        public List<Pessoa> Get(string Uf)
         {
             try
             {
-                return Pessoa.pessoas?.FirstOrDefault(k => k.Uf == Uf);
+                return Pessoa.pessoas?.Where(k => k.Uf == Uf).ToList();
             }
             catch (Exception ex)
             {
@@ -74,7 +64,7 @@ namespace DesafioGlobalTec.Controllers
             return null;
         }
 
-        // POST: api/Pessoa
+        // POST: api/Pessoa/InserirPessoa
         [HttpPost]
         [ActionName("InserirPessoa")]
         public Pessoa InserirPessoa([FromBody]Pessoa pessoa)
@@ -97,7 +87,7 @@ namespace DesafioGlobalTec.Controllers
             return null;
         }
         
-        // PUT: api/Pessoa/5
+        // PUT: api/Pessoa/AtualizarPessoa/5
         [HttpPut("{id}")]
         [ActionName("AtualizarPessoa")]
         public Pessoa AtualizarPessoa(int id, [FromBody]Pessoa pessoa)
@@ -133,7 +123,7 @@ namespace DesafioGlobalTec.Controllers
             return null;
         }
         
-        // DELETE: api/Pessoa/5
+        // DELETE: api/Pessoa/ExcluirPessoa/5
         [HttpDelete("{id}")]
         [ActionName("ExcluirPessoa")]
         public void ExcluirPessoa(int id)
