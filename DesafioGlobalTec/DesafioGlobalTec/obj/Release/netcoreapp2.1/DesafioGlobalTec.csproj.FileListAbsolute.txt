@@ -1,0 +1,13 @@
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.deps.json
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.runtimeconfig.json
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.runtimeconfig.dev.json
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.dll
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.pdb
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.csproj.CoreCompileInputs.cache
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.RazorAssemblyInfo.cache
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.RazorAssemblyInfo.cs
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.AssemblyInfoInputs.cache
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.AssemblyInfo.cs
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.RazorTargetAssemblyInfo.cache
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.dll
+C:\Users\fabio\Desktop\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.pdb
