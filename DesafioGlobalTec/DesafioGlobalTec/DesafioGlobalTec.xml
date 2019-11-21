@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DesafioGlobalTec</name>
+    </assembly>
+    <members>
+        <member name="M:DesafioGlobalTec.Controllers.PessoaController.GetPessoas">
+            <summary>
+            Busca uma pessoa.
+            </summary>
+            <returns>Objeto contendo valores de uma pessoa</returns>
+        </member>
+        <member name="M:DesafioGlobalTec.Controllers.PessoaController.GetPessoa(System.Int32)">
+            <summary>
+            Busca uma pessoa.
+            </summary>
+            <param name="id"> id da pessoa</param>
+            <returns>Objeto contendo valores de uma pessoa</returns>
+        </member>
+        <member name="M:DesafioGlobalTec.Controllers.PessoaController.Get(System.String)">
+            <summary>
+            Busca um Estado.
+            </summary>
+            <param name="Uf">sigla do estado</param>
+            <returns>Objeto contendo o estado buscado</returns>     
+        </member>
+        <member name="M:DesafioGlobalTec.Controllers.PessoaController.InserirPessoa(DesafioGlobalTec.Models.Pessoa)">
+            <summary>
+            Insere uma pessoa.
+            </summary>
+            <param name="pessoa">objeto pessoa</param>
+            <returns>Objeto contendo valores de uma pessoa recém inserida</returns>  
+        </member>
+        <member name="M:DesafioGlobalTec.Controllers.PessoaController.AtualizarPessoa(System.Int32,DesafioGlobalTec.Models.Pessoa)">
+            <summary>
+            atualiza uma pessoa.
+            </summary>
+            <param name="pessoa">objeto pessoa</param>
+            <returns>Objeto contendo valores de uma pessoa recém alterada</returns>  
+        </member>
+        <member name="M:DesafioGlobalTec.Controllers.PessoaController.ExcluirPessoa(System.Int32)">
+            <summary>
+            deleta uma pessoa.
+            </summary>
+            <param name="id">objeto pessoa</param>
+            <returns>void</returns> 
+        </member>
+    </members>
+</doc>

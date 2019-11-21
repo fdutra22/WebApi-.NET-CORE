@@ -1,0 +1,29 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:9000",
+      "sslPort": 0
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "workingDirectory": "http://localhost:9000",
+      "launchBrowser": true,
+     "launchUrl": "api/Pessoa/GetPessoas",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:9000"
+    },
+    "DesafioGlobalTec": {
+      "commandName": "IISExpress",
+      "workingDirectory": "C:\\Users\\fabio\\Desktop\\Software_Gerenciador_Api_Sigma\\Software_Gerenciador_Api_Sigma\\trunk\\GerenciadorApiSigma",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:2128"
+    }
+  }
+}

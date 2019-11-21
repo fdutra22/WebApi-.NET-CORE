@@ -16,7 +16,10 @@ namespace DesafioGlobalTec.Controllers
     [ApiController]
     public class PessoaController : Controller
     {
-        // GET: api/Pessoa/GetPessoas
+        /// <summary>
+        /// Busca uma pessoa.
+        /// </summary>
+        /// <returns>Objeto contendo valores de uma pessoa</returns>
         [HttpGet]
         [ActionName("GetPessoas")]
         public List<Pessoa> GetPessoas()
@@ -31,7 +34,11 @@ namespace DesafioGlobalTec.Controllers
             return null;
         }
 
-        // GET: api/Pessoa/GetPessoa/5
+        /// <summary>
+        /// Busca uma pessoa.
+        /// </summary>
+        /// <param name="id"> id da pessoa</param>
+        /// <returns>Objeto contendo valores de uma pessoa</returns>
         [HttpGet("{id}", Name = "GetPessoa")]
         [ActionName("GetPessoa")]
         public Pessoa GetPessoa(int id)
@@ -48,7 +55,11 @@ namespace DesafioGlobalTec.Controllers
         }
 
 
-       // GET: api/Pessoa/GetUf/GO     
+        /// <summary>
+        /// Busca um Estado.
+        /// </summary>
+        /// <param name="Uf">sigla do estado</param>
+        /// <returns>Objeto contendo o estado buscado</returns>     
         [HttpGet("{uf}", Name = "GetUf")]
         [ActionName("GetUf")]
         public List<Pessoa> Get(string Uf)
@@ -64,7 +75,11 @@ namespace DesafioGlobalTec.Controllers
             return null;
         }
 
-        // POST: api/Pessoa/InserirPessoa
+        /// <summary>
+        /// Insere uma pessoa.
+        /// </summary>
+        /// <param name="pessoa">objeto pessoa</param>
+        /// <returns>Objeto contendo valores de uma pessoa recém inserida</returns>  
         [HttpPost]
         [ActionName("InserirPessoa")]
         public Pessoa InserirPessoa([FromBody]Pessoa pessoa)
@@ -86,8 +101,12 @@ namespace DesafioGlobalTec.Controllers
             }
             return null;
         }
-        
-        // PUT: api/Pessoa/AtualizarPessoa/5
+
+        /// <summary>
+        /// atualiza uma pessoa.
+        /// </summary>
+        /// <param name="pessoa">objeto pessoa</param>
+        /// <returns>Objeto contendo valores de uma pessoa recém alterada</returns>  
         [HttpPut("{id}")]
         [ActionName("AtualizarPessoa")]
         public Pessoa AtualizarPessoa(int id, [FromBody]Pessoa pessoa)
@@ -122,8 +141,12 @@ namespace DesafioGlobalTec.Controllers
             }
             return null;
         }
-        
-        // DELETE: api/Pessoa/ExcluirPessoa/5
+
+        /// <summary>
+        /// deleta uma pessoa.
+        /// </summary>
+        /// <param name="id">objeto pessoa</param>
+        /// <returns>void</returns> 
         [HttpDelete("{id}")]
         [ActionName("ExcluirPessoa")]
         public void ExcluirPessoa(int id)

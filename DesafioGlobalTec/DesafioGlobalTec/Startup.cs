@@ -9,6 +9,9 @@ using DesafioGlobalTec.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
+using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.Extensions.PlatformAbstractions;
+using System.IO;
 
 namespace DesafioGlobalTec
 {
@@ -30,6 +33,7 @@ namespace DesafioGlobalTec
                 .AddMvc()
                 .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
             
+
             // configure basic authentication 
             services.AddAuthentication("BasicAuthentication")
                 .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
@@ -39,7 +43,32 @@ namespace DesafioGlobalTec
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
-        }
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new Info
+                    {
+                        Title = "Desafio GlobalTech",
+                        Version = "v1",
+                        Description = "Exemplo de API REST criada com o ASP.NET Core",
+                        Contact = new Contact
+                        {
+                            Name = "Fabio Lopes",
+                            Url = "62 993978230"
+                        }
+                    });
+
+                string caminhoAplicacao =
+                    PlatformServices.Default.Application.ApplicationBasePath;
+                string nomeAplicacao =
+                    PlatformServices.Default.Application.ApplicationName;
+                string caminhoXmlDoc =
+                    Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
+
+                c.IncludeXmlComments(caminhoXmlDoc);
+            });
+        
+    }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -80,6 +109,13 @@ namespace DesafioGlobalTec
             
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json",
+                    "Desafio Globaltec");
+            });
         }
     }
 }
