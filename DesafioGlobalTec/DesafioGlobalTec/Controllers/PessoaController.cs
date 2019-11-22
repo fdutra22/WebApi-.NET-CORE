@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DesafioGlobalTec.Controllers
 {
     [Produces("application/json")]
-    //[Authorize]
+    [Authorize("Bearer")]
     [Route("api/[controller]/[action]")]
 
     [ApiController]

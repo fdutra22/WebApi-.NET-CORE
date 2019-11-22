@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace DesafioGlobalTec.Models
 {
+    //Classe do Objeto Pessoa
     public class Pessoa
     {
         public int Codigo { get; set; }
