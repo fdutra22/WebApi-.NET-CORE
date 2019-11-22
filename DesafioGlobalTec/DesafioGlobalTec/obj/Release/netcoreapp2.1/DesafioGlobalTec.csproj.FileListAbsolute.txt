@@ -19,6 +19,7 @@ C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalT
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.runtimeconfig.dev.json
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.dll
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.pdb
+C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.xml
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.csprojAssemblyReference.cache
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.RazorAssemblyInfo.cache
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.RazorAssemblyInfo.cs
@@ -27,4 +28,3 @@ C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalT
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.RazorTargetAssemblyInfo.cache
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.dll
 C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\obj\Release\netcoreapp2.1\DesafioGlobalTec.pdb
-C:\Users\Fabio\Documents\GitHub\WebApi-.NET-CORE\DesafioGlobalTec\DesafioGlobalTec\bin\Release\netcoreapp2.1\DesafioGlobalTec.xml

@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DesafioGlobalTec.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Serialization;
-using Microsoft.AspNetCore.Authentication;
-using DesafioGlobalTec.Helpers;
-using DesafioGlobalTec.Services;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.PlatformAbstractions;
+using Newtonsoft.Json.Serialization;
+using Swashbuckle.AspNetCore.Swagger;
+using System.Collections.Generic;
 using System.IO;
+using System.Net;
 
 namespace DesafioGlobalTec
 {
@@ -32,11 +31,11 @@ namespace DesafioGlobalTec
             services
                 .AddMvc()
                 .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
-            
+
 
             // configure basic authentication 
-            services.AddAuthentication("BasicAuthentication")
-                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+            //services.AddAuthentication("BasicAuthentication")
+             //   .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
 
 
             services.ConfigureApplicationCookie(options => options.LoginPath = "/Users");
@@ -59,23 +58,41 @@ namespace DesafioGlobalTec
                     });
 
                 string caminhoAplicacao =
-                    PlatformServices.Default.Application.ApplicationBasePath;
+                        PlatformServices.Default.Application.ApplicationBasePath;
                 string nomeAplicacao =
                     PlatformServices.Default.Application.ApplicationName;
                 string caminhoXmlDoc =
                     Path.Combine(caminhoAplicacao, $"{nomeAplicacao}.xml");
 
                 c.IncludeXmlComments(caminhoXmlDoc);
+
+                var security = new Dictionary<string, IEnumerable<string>>
+                {
+                    {"Bearer", new string[] { }},
+                };
+
+                c.AddSecurityDefinition(
+                    "Bearer",
+                    new ApiKeyScheme
+                    {
+                        In = "header",
+                        Description = "Copie 'Bearer ' + token'",
+                        Name = "Authorization",
+                        Type = "apiKey"
+                    });
+
+                c.AddSecurityRequirement(security);
+                c.OperationFilter<AuthorizationHeaderParameterOperationFilter>();
             });
-        
-    }
+
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
-               // app.UseBrowserLink();
+                // app.UseBrowserLink();
                 app.UseDeveloperExceptionPage();
             }
             else
@@ -88,7 +105,8 @@ namespace DesafioGlobalTec
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseStatusCodePages(async context => {
+            app.UseStatusCodePages(async context =>
+            {
                 var response = context.HttpContext.Response;
 
                 if (response.StatusCode == (int)HttpStatusCode.Unauthorized ||
@@ -96,7 +114,7 @@ namespace DesafioGlobalTec
                     response.Redirect("/api/error");
             });
 
-           
+
 
             // global cors policy
             app.UseCors(x => x
@@ -106,7 +124,7 @@ namespace DesafioGlobalTec
                 .AllowCredentials());
 
             app.UseAuthentication();
-            
+
             app.UseHttpsRedirection();
             app.UseMvc();
 
